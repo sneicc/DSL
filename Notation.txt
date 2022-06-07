@@ -1,0 +1,10 @@
+program -> initint|assign|(program END)
+print -> PRINT LPR expr RPR SC
+assign -> VAR OPASS expr SC
+initint -> DTINT VAR OPASS expr SC
+expr -> sum
+sum -> sub|(sub OPPL sum)
+sub-> mul|(mul OPPL sub)
+mul -> div|(div OPMUL mul)
+div -> basic|(basic OPDIV div)
+basic -> DIGIT|(LPR sum RPR)
